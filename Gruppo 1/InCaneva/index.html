@@ -15,20 +15,45 @@
     <script type="text/javascript" src="bower_components/moment/locale/it.js"></script>
 
     <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/modalApp.js"></script>
     <script type="text/javascript" src="app/controllers/main.controller.js"></script>
+
 </head>
 <body ng-controller="mainController">
     <div class="container">
         <h4>Calendario eventi</h4>
         <br/>
-        <div ng-repeat="data in events" class="event row">
-            <div class="col-xs-2 date">
-
+        <a href="#modalIncaneva" id="modal" data-toggle="modal" data-target="#modalIncaneva">
+            <div ng-repeat="event in events" class="event row" >
+                <div class="col-xs-2 date">
+                    {{event.evcal_srow | amFromUnix | amDateFormat:'YYYY.MM.DD'}}
+                </div>
+                <div class="col-xs-3 description">
+                    <h4>{{event.post_title}}</h4>
+                    <p>Ora evento</p>
+                    <p>{{event.post_excerpt}}</p>
+                </div>
             </div>
-            <div class="col-xs-3 description">
-                <h4>Titolo evento</h4>
-                <p>Ora evento</p>
-                <p>Breve descrizione dell'evento</p>
+        </a>
+    </div>
+    <div class="modal fade" id="modelIncaneva" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <h2>Ulteriori informazioni</h2>
+                    <div class="col-md-12 border box-1">
+                        <div class="col-md-4 table">
+                            <img class="tab img-responsive" src="">
+                        </div>
+                        <p class="text" data-dismiss="modal">Testo completo</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#">link</a>
+                </div>
             </div>
         </div>
     </div>
