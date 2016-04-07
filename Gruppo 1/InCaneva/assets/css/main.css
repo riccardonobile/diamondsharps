@@ -6,31 +6,38 @@
     border-bottom:1px;
     border-bottom-style: solid;
 }
-.date{
+.date {
     width: 80px;
 }
-.row{
+.row {
     margin-left:0;
 }
-.start-date {
+.event-date {
+    margin-right: 15px;
+    float: left;
+}
+.event-details {
+    float: left;
+}
+.event-date-start {
     float: left;
     font-size: 30px;
     clear: both;
     color: #ABABAB;
 }
-.end-date {
+.event-date-end {
     float: left;
     margin-left: 4px;
     font-size: 14px;
     color: #ABABAB;
 }
-.start-date em {
+.event-date-start em {
     margin-left: 0;
     margin-top: 3px;
 }
 
-.start-date em,
-.end-date em {
+.event-date-start em,
+.event-date-end em {
     font-size: 11px;
     font-weight: normal;
     display: block;
@@ -38,9 +45,24 @@
     text-transform: uppercase;
     line-height: 110%;
 }
-.end-date em {
+.event-date-end em {
     font-size: 8px;
     margin-top: 3px;
+}
+.list-group-item {
+    border-left: 5px solid #ddd;
+}
+.list-group-item-green {
+    border-left-color: #5cb85c;
+}
+.list-group-item-red {
+    border-left-color: #d9534f;
+}
+.list-group-item-lightblue {
+    border-left-color: #5bc0de;
+}
+.list-group-item-purple {
+    border-left-color: #6f5499;
 }
 .loader:before,
 .loader:after,

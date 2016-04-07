@@ -1,4 +1,4 @@
-incanevaApp.controller('mainController', ['$scope', '$http', '$httpParamSerializerJQLike', function($scope, $http, $httpParamSerializerJQLike) {
+incanevaApp.controller('mainController', ['$scope', '$http', '$httpParamSerializerJQLike', '$uibModal', function($scope, $http, $httpParamSerializerJQLike, $uibModal) {
 
     var apiUrl = 'http://incaneva.it/wp-admin/admin-ajax.php';
     var apiData = {
@@ -28,4 +28,24 @@ incanevaApp.controller('mainController', ['$scope', '$http', '$httpParamSerializ
     }).finally(function() {
         $scope.loading = false;
     });
+
+    $scope.endEqualsStart = function (startDate, endDate) {
+        if (startDate == endDate) {
+            return true;
+        }
+    };
+
+    $scope.openEvent = function(size) {
+        var modalInstance = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            templateUrl: 'app/views/details.modal.html',
+            controller: 'ModalInstanceCtrl',
+            size: size,
+            resolve: {
+                items: function () {
+                    return $scope.items;
+                }
+            }
+        });
+    }
 }]);

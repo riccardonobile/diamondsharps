@@ -18,6 +18,7 @@
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/modalApp.js"></script>
     <script type="text/javascript" src="app/controllers/main.controller.js"></script>
+    <script type="text/javascript" src="app/controllers/modal.controller.js"></script>
 
 </head>
 <body ng-controller="mainController">
@@ -29,10 +30,29 @@
         </div>
     </nav>
     <div class="container">
-        <div ng-show="loading">
-            <div class="loader">Loading...</div>
+        <div class="loader" ng-show="loading">Loading...</div>
+        <div class="event_list" ng-hide="loading">
+            <ul class="list-group">
+                <li ng-click="openEvent('lg')" ng-repeat="event in events | orderBy: 'evcal_srow'" class="list-group-item clearfix" ng-class="{'list-group-item-red': event.event_type[1] == 'storia-cultura', 'list-group-item-green': event.event_type[1] == 'natura', 'list-group-item-lightblue': event.event_type[1] == 'sport', 'list-group-item-purple': event.event_type[1] == 'passioni'}">
+                    <div class="event-date">
+                        <span class="event-date-start">
+                            {{event.evcal_srow | amFromUnix | amDateFormat:'DD'}}
+                            <em>{{event.evcal_srow | amFromUnix | amDateFormat:'MMM'}}</em>
+                        </span>
+                        <span class="event-date-end" ng-hide="endEqualsStart(event.evcal_srow, event.evcal_erow)">
+                            {{event.evcal_erow | amFromUnix | amDateFormat:'DD'}}
+                            <em>{{event.evcal_erow | amFromUnix | amDateFormat:'MMM'}}</em>
+                        </span>
+                    </div>
+                    <div class="event-details">
+                        <h4>{{event.post_title}}</h4>
+                        <p>{{event.evcal_srow | amFromUnix | amDateFormat:'HH:mm'}}</p>
+                        <p>{{event.post_excerpt}}</p>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <a href="#modelIncaneva" id="modal" data-toggle="modal" data-target="#modalIncaneva">
+        <!--<a href="#modelIncaneva" id="modal" data-toggle="modal" data-target="#modalIncaneva">
             <div ng-repeat="event in events | orderBy: 'evcal_srow'" class="event row" >
                 <div class="col-xs-2 date">
                     <span class="start-date">
@@ -49,7 +69,7 @@
                     <p>{{event.post_excerpt}}</p>
                 </div>
             </div>
-        </a>
+        </a>-->
     </div>
     <div class="modal fade" id="modelIncaneva" role="dialog">
         <div class="modal-dialog">
