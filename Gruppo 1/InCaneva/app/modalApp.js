@@ -1,3 +1,1 @@
-$('#modal').click(function(){
-    $('.event').append($('#modal'))
-});
+$("#modalIncaneva").modal();
