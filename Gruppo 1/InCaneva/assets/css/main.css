@@ -1,0 +1,17 @@
+.event{
+    border-left-color:black;
+    border-left:5px;
+    border-left-style: solid;
+    border-bottom-color:lightgrey;
+    border-bottom:1px;
+    border-bottom-style: solid;
+}
+.date{
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    padding-top: 20px;
+}
+.row{
+    margin-left:0;
+}
