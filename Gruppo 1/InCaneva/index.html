@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="incanevaApp">
+<html lang="it" ng-app="incanevaApp">
 <head>
     <meta charset="UTF-8">
     <title>InCaneva Webapp</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="assets/css/main.css">
@@ -20,15 +21,29 @@
 
 </head>
 <body ng-controller="mainController">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Calensario Eventi InCaneva</a>
+            </div>
+        </div>
+    </nav>
     <div class="container">
-        <h4>Calendario eventi</h4>
-        <br/>
-        <a href="#modalIncaneva" id="modal" data-toggle="modal" data-target="#modalIncaneva">
-            <div ng-repeat="event in events" class="event row" >
+        <div ng-show="loading">
+            <div class="loader">Loading...</div>
+        </div>
+        <a href="#modelIncaneva" id="modal" data-toggle="modal" data-target="#modalIncaneva">
+            <div ng-repeat="event in events | orderBy: 'evcal_srow'" class="event row" >
                 <div class="col-xs-2 date">
-                    {{event.evcal_srow | amFromUnix | amDateFormat:'YYYY.MM.DD'}}
+                    <span class="start-date">
+                        {{event.evcal_srow | amFromUnix | amDateFormat:'DD'}}
+                        <em>{{event.evcal_srow | amFromUnix | amDateFormat:'MMM'}}</em>
+                    </span>
+                    <span class="end-date">
+
+                    </span>
                 </div>
-                <div class="col-xs-3 description">
+                <div class="col-xs-10 description">
                     <h4>{{event.post_title}}</h4>
                     <p>Ora evento</p>
                     <p>{{event.post_excerpt}}</p>

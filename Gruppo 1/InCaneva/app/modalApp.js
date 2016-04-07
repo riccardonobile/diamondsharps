@@ -1,5 +1,3 @@
-$(document).ready(function(){
-    $("#modal").click(function(){
-        $("#modalIncaneva").modal();
-    });
+$("#modal").click(function(){
+    $("#modal").append('#modalIncaneva');
 });
