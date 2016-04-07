@@ -1,1 +1,1 @@
-var incanevaApp = angular.module('incanevaApp', ['ui.router', ])
+var incanevaApp = angular.module('incanevaApp', ['ui.bootstrap', 'angularMoment']);
