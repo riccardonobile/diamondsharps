@@ -1,0 +1,19 @@
+
+#riga a:hover {
+    background-color: blue;
+}
+
+#colonna {
+    border-right: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
+}
+
+#pnl {
+    border-top: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+
+}
+
+#spazio {
+    border-right: 1px solid lightgrey;;
+}
