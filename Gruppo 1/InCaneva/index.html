@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="assets/css/main.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/modal.css">
+    <!--<link type="text/css" rel="stylesheet" href="assets/css/modal.css">-->
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -19,14 +19,12 @@
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/modalApp.js"></script>
     <script type="text/javascript" src="app/controllers/main.controller.js"></script>
-    <script type="text/javascript" src="app/controllers/modal.controller.js"></script>
-
 </head>
 <body ng-controller="mainController">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Calensario Eventi InCaneva</a>
+                <a class="navbar-brand" href="#">Calendario Eventi InCaneva</a>
             </div>
         </div>
     </nav>
@@ -34,7 +32,7 @@
         <div class="loader" ng-show="loading">Loading...</div>
         <div class="event_list" ng-hide="loading">
             <ul class="list-group">
-                <a href="#modelIncaneva"><li ng-click="openEvent('lg')" ng-repeat="event in events | orderBy: 'evcal_srow'" class="list-group-item clearfix" ng-class="{'list-group-item-red': event.event_type[1] == 'storia-cultura', 'list-group-item-green': event.event_type[1] == 'natura', 'list-group-item-lightblue': event.event_type[1] == 'sport', 'list-group-item-purple': event.event_type[1] == 'passioni'}">
+                <li data-toggle="modal" data-target="#myModal" ng-repeat="event in events | orderBy: 'evcal_srow'" class="list-group-item clearfix" ng-class="{'list-group-item-red': event.event_type[1] == 'storia-cultura', 'list-group-item-green': event.event_type[1] == 'natura', 'list-group-item-lightblue': event.event_type[1] == 'sport', 'list-group-item-purple': event.event_type[1] == 'passioni'}">
                     <div class="event-date">
                         <span class="event-date-start">
                             {{event.evcal_srow | amFromUnix | amDateFormat:'DD'}}
@@ -50,11 +48,27 @@
                         <p>{{event.evcal_srow | amFromUnix | amDateFormat:'HH:mm'}}</p>
                         <p>{{event.post_excerpt}}</p>
                     </div>
-                </li></a>
+                </li>
             </ul>
         </div>
     </div>
-    <div id="modelIncaneva" class="modalDialog">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Titolo evento</h4>
+                </div>
+                <div class="modal-body">
+                    Foto + descrizione completa + link post originale
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div id="modelIncaneva" class="modalDialog">
         <div>
             <a href="#close" title="Close" class="close">X</a>
             <h2>Titolo</h2>
@@ -62,6 +76,6 @@
             <p>testo di descrizione</p>
             <a href="#">link</a>
         </div>
-    </div>
+    </div>-->
 </body>
 </html>
