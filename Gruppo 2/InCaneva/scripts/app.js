@@ -31,7 +31,7 @@ app.controller('main', function ($scope, $http) {
     };
 
     $scope.filterByDate = function (month) {
-        if(json !== undefined) {
+        if(json != undefined) {
             $scope.events = [];
             json.forEach(function (el) {
                 if(month == el.post_month_numerical && $scope.year == el.post_year) {
@@ -41,8 +41,13 @@ app.controller('main', function ($scope, $http) {
 
             console.log($scope.events);
         }
+
+        if($scope.events == []) {
+
+            console.log("Non ci sono eventi")
+        }
     };
     
-    $scope.loadData("1,6,7,8", "", "", "", "");
+    $scope.loadData("1,6,7,8", "true", "", "", "");
 
 });

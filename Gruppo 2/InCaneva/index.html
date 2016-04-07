@@ -145,8 +145,18 @@
 
                     <div class="col-md-4">
 
-                        <h3>{{blogname}}</h3>
-                        <h5>{{evcal_start_date}}</h5>
+                        <div ng-repeat="el in events" class="repetitor">
+
+                            <h3>{{el.post_title}}</h3>
+                            <h5>{{el.evcal_start_date}}</h5>
+
+                            <button type="button" class="btn btn-success" ng-click="details()">Dettagli</button>
+                            <hr>
+
+                        </div>
+
+
+                        <p>{{}}</p>
 
                     </div>
 

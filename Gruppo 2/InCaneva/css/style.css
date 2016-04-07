@@ -21,3 +21,8 @@ footer {
     text-align: center;
     margin-top: 50px;
 }
+
+.repetitor a:hover {
+
+    background-color: lightcyan;
+}
