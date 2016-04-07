@@ -7,6 +7,10 @@ var app = angular.module('incanevaApp', []);
 app.controller('main', function ($scope, $http) {
     
     var json;
+    var currentMonth = new Date().getMonth() + 1;
+
+    $scope.year = 2016;
+    $scope.events = [];
     
     $scope.loadData = function (blog, old, limit, offset, filter) {
 
@@ -17,16 +21,33 @@ app.controller('main', function ($scope, $http) {
         })
             .then(function (result) {
                 json = result.data.data;
+                $scope.filterByDate(currentMonth);
             });
 
     };
-    
+
+    $scope.changeYear = function (year) {
+        $scope.year = year;
+    };
+
     $scope.filterByDate = function (month) {
-        json.forEach(function (el) {
-            if(el.post_month_numerical)
-        })
-    }
+        if(json != undefined) {
+            $scope.events = [];
+            json.forEach(function (el) {
+                if(month == el.post_month_numerical && $scope.year == el.post_year) {
+                    $scope.events.push(el)
+                }
+            });
+
+            console.log($scope.events);
+        }
+
+        if($scope.events == []) {
+
+            console.log("Non ci sono eventi")
+        }
+    };
     
-    $scope.loadData("1,6,7,8", "", "", "", "");
+    $scope.loadData("1,6,7,8", "true", "", "", "");
 
 });

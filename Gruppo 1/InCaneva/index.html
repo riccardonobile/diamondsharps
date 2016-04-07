@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="assets/css/main.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/modal.css">
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -33,7 +34,7 @@
         <div class="loader" ng-show="loading">Loading...</div>
         <div class="event_list" ng-hide="loading">
             <ul class="list-group">
-                <li ng-click="openEvent('lg')" ng-repeat="event in events | orderBy: 'evcal_srow'" class="list-group-item clearfix" ng-class="{'list-group-item-red': event.event_type[1] == 'storia-cultura', 'list-group-item-green': event.event_type[1] == 'natura', 'list-group-item-lightblue': event.event_type[1] == 'sport', 'list-group-item-purple': event.event_type[1] == 'passioni'}">
+                <a href="#modelIncaneva"><li ng-click="openEvent('lg')" ng-repeat="event in events | orderBy: 'evcal_srow'" class="list-group-item clearfix" ng-class="{'list-group-item-red': event.event_type[1] == 'storia-cultura', 'list-group-item-green': event.event_type[1] == 'natura', 'list-group-item-lightblue': event.event_type[1] == 'sport', 'list-group-item-purple': event.event_type[1] == 'passioni'}">
                     <div class="event-date">
                         <span class="event-date-start">
                             {{event.evcal_srow | amFromUnix | amDateFormat:'DD'}}
@@ -49,47 +50,17 @@
                         <p>{{event.evcal_srow | amFromUnix | amDateFormat:'HH:mm'}}</p>
                         <p>{{event.post_excerpt}}</p>
                     </div>
-                </li>
+                </li></a>
             </ul>
         </div>
-        <!--<a href="#modelIncaneva" id="modal" data-toggle="modal" data-target="#modalIncaneva">
-            <div ng-repeat="event in events | orderBy: 'evcal_srow'" class="event row" >
-                <div class="col-xs-2 date">
-                    <span class="start-date">
-                        {{event.evcal_srow | amFromUnix | amDateFormat:'DD'}}
-                        <em>{{event.evcal_srow | amFromUnix | amDateFormat:'MMM'}}</em>
-                    </span>
-                    <span class="end-date">
-
-                    </span>
-                </div>
-                <div class="col-xs-10 description">
-                    <h4>{{event.post_title}}</h4>
-                    <p>Ora evento</p>
-                    <p>{{event.post_excerpt}}</p>
-                </div>
-            </div>
-        </a>-->
     </div>
-    <div class="modal fade" id="modelIncaneva" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <h2>Ulteriori informazioni</h2>
-                    <div class="col-md-12 border box-1">
-                        <div class="col-md-4 table">
-                            <img class="tab img-responsive" src="">
-                        </div>
-                        <p class="text" data-dismiss="modal">Testo completo</p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <a href="#">link</a>
-                </div>
-            </div>
+    <div id="modelIncaneva" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h2>Titolo</h2>
+            <img src="" alt="">
+            <p>testo di descrizione</p>
+            <a href="#">link</a>
         </div>
     </div>
 </body>

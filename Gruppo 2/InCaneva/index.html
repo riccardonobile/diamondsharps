@@ -28,14 +28,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="dropdown">
-                    <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        2016
+                    <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        {{year}}
                         <span class="caret"></span>
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dLabel">
-                        <li><a href="#">2015</a> </li>
-                        <li><a href="#">2014</a> </li>
+                        <li><a href="#" ng-click="changeYear(2016)">2016</a> </li>
+                        <li><a href="#" ng-click="changeYear(2015)">2015</a> </li>
+                        <li><a href="#" ng-click="changeYear(2014)">2014</a> </li>
 
                     </ul>
                 </div>
@@ -50,84 +51,84 @@
 
                 <div class="row" class="riga">
                     <div class="col-md-12">
-                        <h5> <a href="#">Gennaio</a> </h5>
+                        <h5> <a href="#" ng-click="filterByDate(01)">Gennaio</a> </h5>
                     </div>
                 </div>
                 <br>
 
                 <div class="row" class="riga">
                     <div class="col-md-12">
-                        <h5> <a href="#">Febbraio</a> </h5>
+                        <h5> <a href="#" ng-click="filterByDate(02)">Febbraio</a> </h5>
                     </div>
                 </div>
                  <br>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h5> <a href="#">Marzo</a> </h5>
+                        <h5> <a href="#" ng-click="filterByDate(03)">Marzo</a> </h5>
                     </div>
                 </div>
                 <br>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h5> <a href="#">Aprile</a> </h5>
+                        <h5> <a href="#" ng-click="filterByDate(04)">Aprile</a> </h5>
                     </div>
                 </div>
                 <br>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h5> <a href="#">Maggio</a> </h5>
+                        <h5> <a href="#" ng-click="filterByDate(05)">Maggio</a> </h5>
                     </div>
                 </div>
                 <br>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h5> <a href="#">Giugno</a> </h5>
+                        <h5> <a href="#" ng-click="filterByDate(06)">Giugno</a> </h5>
                     </div>
                 </div>
                 <br>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h5> <a href="#">Luglio</a> </h5>
+                        <h5> <a href="#" ng-click="filterByDate(07)">Luglio</a> </h5>
                     </div>
                 </div>
                 <br>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h5> <a href="#">Agosto</a> </h5>
+                        <h5> <a href="#" ng-click="filterByDate(08)">Agosto</a> </h5>
                     </div>
                 </div>
                 <br>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h5> <a href="#">Settembre</a> </h5>
+                        <h5> <a href="#" ng-click="filterByDate(09)">Settembre</a> </h5>
                     </div>
                 </div>
                 <br>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h5> <a href="#">Ottobre</a> </h5>
+                        <h5> <a href="#" ng-click="filterByDate(10)">Ottobre</a> </h5>
                     </div>
                 </div>
                 <br>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h5> <a href="#">Novembre</a> </h5>
+                        <h5> <a href="#" ng-click="filterByDate(11)">Novembre</a> </h5>
                     </div>
                 </div>
                 <br>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h5> <a href="#">Dicembre</a> </h5>
+                        <h5> <a href="#" ng-click="filterByDate(12)">Dicembre</a> </h5>
                     </div>
                 </div>
                 <br>
@@ -140,7 +141,32 @@
 
                 <div class="col-md-1" id="spazio"></div>
 
-                <div class="col-md-8" id="pnl">
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <div ng-repeat="el in events" class="repetitor">
+
+                            <h3>{{el.post_title}}</h3>
+                            <h5>{{el.evcal_start_date}}</h5>
+
+                            <button type="button" class="btn btn-success" ng-click="details()">Dettagli</button>
+                            <hr>
+
+                        </div>
+
+
+                        <p>{{}}</p>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                    </div>
 
                 </div>
 
