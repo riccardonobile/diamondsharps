@@ -8,10 +8,37 @@
 }
 .date{
     width: 80px;
-    height: 50px;
-    text-align: center;
-    padding-top: 20px;
 }
 .row{
     margin-left:0;
+}
+.start-date {
+    float: left;
+    font-size: 30px;
+    clear: both;
+    color: #ABABAB;
+}
+.end-date {
+    float: left;
+    margin-left: 4px;
+    font-size: 14px;
+    color: #ABABAB;
+}
+.start-date em {
+    margin-left: 0;
+    margin-top: 3px;
+}
+
+.start-date em,
+.end-date em {
+    font-size: 11px;
+    font-weight: normal;
+    display: block;
+    font-style: normal;
+    text-transform: uppercase;
+    line-height: 110%;
+}
+.end-date em {
+    font-size: 8px;
+    margin-top: 3px;
 }
