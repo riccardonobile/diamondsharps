@@ -21,14 +21,14 @@
     <div class="container">
         <h4>Calendario eventi</h4>
         <br/>
-        <div ng-repeat="data in events" class="event row">
+        <div ng-repeat="event in events" class="event row">
             <div class="col-xs-2 date">
-
+                {{event.evcal_srow.unixTime | amFromUnix | amParse:'YYYY.MM.DD HH:mm:ss'}}
             </div>
             <div class="col-xs-3 description">
-                <h4>Titolo evento</h4>
+                <h4>{{event.post_title}}</h4>
                 <p>Ora evento</p>
-                <p>Breve descrizione dell'evento</p>
+                <p>{{event.post_excerpt}}</p>
             </div>
         </div>
     </div>
