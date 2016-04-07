@@ -19,6 +19,7 @@ incanevaApp.controller('mainController', ['$scope', '$http', '$httpParamSerializ
     }).then(function(resp) {
         if(resp.data.success) {
             $scope.events = resp.data.data;
+            console.log(resp.data);
         } else {
 
         }

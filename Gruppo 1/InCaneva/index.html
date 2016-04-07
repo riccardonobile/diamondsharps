@@ -26,7 +26,7 @@
         <a href="#" id="modal" data-toggle="modal" data-target="#modalIncaneva">
             <div ng-repeat="event in events" class="event row" >
                 <div class="col-xs-2 date">
-                    {{event.evcal_srow.unixTime | amFromUnix | amParse:'YYYY.MM.DD HH:mm:ss'}}
+                    {{event.evcal_srow | amFromUnix | amDateFormat:'YYYY.MM.DD'}}
                 </div>
                 <div class="col-xs-3 description">
                     <h4>{{event.post_title}}</h4>
