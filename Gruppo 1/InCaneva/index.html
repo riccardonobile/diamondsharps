@@ -21,7 +21,7 @@
     <div class="container">
         <h4>Calendario eventi</h4>
         <br/>
-        <div ng-repeat="event in events" class="event row">
+        <div ng-repeat="event in events" class="event row" data-toggle="modal" data-target="#modalIncaneva">
             <div class="col-xs-2 date">
                 {{event.evcal_srow.unixTime | amFromUnix | amParse:'YYYY.MM.DD HH:mm:ss'}}
             </div>
