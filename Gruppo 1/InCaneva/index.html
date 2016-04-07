@@ -23,8 +23,8 @@
     <div class="container">
         <h4>Calendario eventi</h4>
         <br/>
-        <a href="#modalIncaneva" id="modal" data-toggle="modal" data-target="#modalIncaneva">
-            <div ng-repeat="event in events | orderBy: 'evcal_srow'" class="event row">
+        <a href="#modelIncaneva" id="modal" data-toggle="modal" data-target="#modalIncaneva">
+            <div ng-repeat="event in events | orderBy: 'evcal_srow'" class="event row" >
                 <div class="col-xs-2 date">
                     <span class="start-date">
                         {{event.evcal_srow | amFromUnix | amDateFormat:'DD'}}
