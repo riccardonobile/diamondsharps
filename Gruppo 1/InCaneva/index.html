@@ -10,10 +10,27 @@
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment/moment.js"></script>
+    <script type="text/javascript" src="bower_components/angular-moment/angular-moment.js"></script>
+    <script type="text/javascript" src="bower_components/moment/locale/it.js"></script>
 
     <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/controllers/main.controller.js"></script>
 </head>
-<body>
+<body ng-controller="mainController">
+    <div class="container">
+        <h4>Calendario eventi</h4>
+        <br/>
+        <div ng-repeat="data in events" class="event row">
+            <div class="col-xs-2 date">
 
+            </div>
+            <div class="col-xs-3 description">
+                <h4>Titolo evento</h4>
+                <p>Ora evento</p>
+                <p>Breve descrizione dell'evento</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
