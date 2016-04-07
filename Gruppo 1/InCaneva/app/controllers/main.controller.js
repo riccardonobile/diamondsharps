@@ -1,4 +1,4 @@
-incanevaApp.controller('mainController', ['$http', '$httpParamSerializerJQLike', function($http, $httpParamSerializerJQLike) {
+incanevaApp.controller('mainController', ['$scope', '$http', '$httpParamSerializerJQLike', function($scope, $http, $httpParamSerializerJQLike) {
 
     var apiUrl = 'http://incaneva.it/wp-admin/admin-ajax.php';
     var apiData = {
@@ -20,7 +20,7 @@ incanevaApp.controller('mainController', ['$http', '$httpParamSerializerJQLike',
         if(resp.data.success) {
             $scope.events = resp.data.data;
         } else {
-            
+
         }
     }, function(err) {
 
