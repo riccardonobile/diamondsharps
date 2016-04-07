@@ -42,11 +42,13 @@ app.controller('main', function ($scope, $http) {
             console.log($scope.events);
         }
 
-        if($scope.events == []) {
+        if($scope.events.length == 0) {
 
-            console.log("Non ci sono eventi")
+            
         }
     };
+
+
     
     $scope.loadData("1,6,7,8", "true", "", "", "");
 
