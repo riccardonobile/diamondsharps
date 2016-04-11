@@ -22,7 +22,14 @@ footer {
     margin-top: 50px;
 }
 
-.repetitor a:hover {
 
-    background-color: lightcyan;
+#titolo{
+    background-color: #008fb2 ;
+    font-family: Tahoma;
+    color: #ffc500 ;
+    text-align: center;
+}
+
+.riga:hover {
+    background-color: lightskyblue;
 }
