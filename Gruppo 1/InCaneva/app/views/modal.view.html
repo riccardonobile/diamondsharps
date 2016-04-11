@@ -3,13 +3,13 @@
     <h4 class="modal-title">{{event.post_title}}</h4>
 </div>
 <div class="modal-body">
-    <img ng-src="{{event.post_thumbnail}}" ng-show="event.post_thumbnail != ''">
+    <img class="img-responsive" ng-src="{{event.post_thumbnail}}" ng-show="event.post_thumbnail != ''">
     <p ng-bind-html="sanitize(event.post_content)"></p>
 </div>
 <div class="modal-footer clearfix">
     <div class="pull-left">
-        <a class="btn btn-link" ng-href="https://www.facebook.com/sharer/sharer.php?u={{event.permalink}}" target="_blank">Condividi su Facebook</a>
-        <a class="btn btn-link" ng-href="https://twitter.com/home?status={{event.permalink}}" target="_blank">Condividi su Twitter</a>
+        <a class="btn btn-link" ng-href="https://www.facebook.com/sharer/sharer.php?u={{event.permalink}}" target="_blank">Facebook</a>
+        <a class="btn btn-link" ng-href="https://twitter.com/home?status={{event.permalink}}" target="_blank">Twitter</a>
     </div>
-    <a ng-href="{{event.permalink}}" class="btn btn-primary" role="button">Link al post originale</a>
+    <a ng-href="{{event.permalink}}" class="btn btn-primary" role="button" target="_blank">Link al post originale</a>
 </div>
