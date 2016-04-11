@@ -33,3 +33,7 @@ footer {
 .riga:hover {
     background-color: lightskyblue;
 }
+
+#link:hover {
+    cursor: pointer;
+}
