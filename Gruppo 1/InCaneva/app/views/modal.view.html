@@ -3,9 +3,9 @@
     <h4 class="modal-title">{{event.post_title}}</h4>
 </div>
 <div class="modal-body">
-    IMG event.thumbnail
+    <img ng-src="{{event.post_thumbnail}}" ng-show="event.post_thumbnail != ''">
     <p ng-bind-html="sanitize(event.post_content)"></p>
 </div>
 <div class="modal-footer">
-    <a href="#" class="btn btn-primary" role="button">Link al post</a>
+    <a href="http://incaneva.it" class="btn btn-primary" role="button">Link al post originale</a>
 </div>

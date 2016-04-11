@@ -40,7 +40,7 @@
                             <em>{{event.evcal_srow | amFromUnix | amDateFormat:'MMM'}}</em>
                         </span>
                         <span class="event-date-end" ng-hide="endEqualsStart(event.evcal_srow, event.evcal_erow)">
-                            {{event.evcal_erow | amFromUnix | amDateFormat:'DD'}}
+                            - {{event.evcal_erow | amFromUnix | amDateFormat:'DD'}}
                             <em>{{event.evcal_erow | amFromUnix | amDateFormat:'MMM'}}</em>
                         </span>
                     </div>

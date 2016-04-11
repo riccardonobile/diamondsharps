@@ -15,16 +15,14 @@
 .event-date {
     margin-right: 15px;
     float: left;
-}
-.event-details {
-    float: left;
+    width: 63px;
 }
 .event-date-start {
-    float: left;
-    font-size: 30px;
-    clear: both;
-    color: #ABABAB;
-}
+     float: left;
+     font-size: 30px;
+     clear: both;
+     color: #ABABAB;
+ }
 .event-date-end {
     float: left;
     margin-left: 4px;
@@ -48,6 +46,7 @@
 .event-date-end em {
     font-size: 8px;
     margin-top: 3px;
+    margin-left: 6px;
 }
 .list-group-item {
     border-left: 5px solid #ddd;
