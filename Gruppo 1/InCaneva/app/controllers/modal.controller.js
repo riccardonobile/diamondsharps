@@ -1,3 +1,0 @@
-incanevaApp.controller('ModalInstanceCtrl', [function() {
-
-}]);

@@ -51,6 +51,7 @@
 }
 .list-group-item {
     border-left: 5px solid #ddd;
+    cursor: pointer;
 }
 .list-group-item-green {
     border-left-color: #5cb85c;
