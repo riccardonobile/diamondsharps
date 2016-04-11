@@ -10,14 +10,15 @@
     <!--<link type="text/css" rel="stylesheet" href="assets/css/modal.css">-->
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script type="text/javascript" src="bower_components/moment/moment.js"></script>
     <script type="text/javascript" src="bower_components/angular-moment/angular-moment.js"></script>
     <script type="text/javascript" src="bower_components/moment/locale/it.js"></script>
 
     <script type="text/javascript" src="app/app.js"></script>
-    <script type="text/javascript" src="app/modalApp.js"></script>
+    <script type="text/javascript" src="app/controllers/modal.controller.js"></script>
     <script type="text/javascript" src="app/controllers/main.controller.js"></script>
 </head>
 <body ng-controller="mainController">
@@ -32,7 +33,7 @@
         <div class="loader" ng-show="loading">Loading...</div>
         <div class="event_list" ng-hide="loading">
             <ul class="list-group">
-                <li data-toggle="modal" data-target="#myModal" ng-repeat="event in events | orderBy: 'evcal_srow'" class="list-group-item clearfix" ng-class="{'list-group-item-red': event.event_type[1] == 'storia-cultura', 'list-group-item-green': event.event_type[1] == 'natura', 'list-group-item-lightblue': event.event_type[1] == 'sport', 'list-group-item-purple': event.event_type[1] == 'passioni'}">
+                <li ng-click="openDetails(event, 'lg')" ng-repeat="event in events | orderBy: 'evcal_srow'" class="list-group-item clearfix" ng-class="{'list-group-item-red': event.event_type[1] == 'storia-cultura', 'list-group-item-green': event.event_type[1] == 'natura', 'list-group-item-lightblue': event.event_type[1] == 'sport', 'list-group-item-purple': event.event_type[1] == 'passioni'}">
                     <div class="event-date">
                         <span class="event-date-start">
                             {{event.evcal_srow | amFromUnix | amDateFormat:'DD'}}
@@ -52,30 +53,5 @@
             </ul>
         </div>
     </div>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Titolo evento</h4>
-                </div>
-                <div class="modal-body">
-                    Foto + descrizione completa + link post originale
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--<div id="modelIncaneva" class="modalDialog">
-        <div>
-            <a href="#close" title="Close" class="close">X</a>
-            <h2>Titolo</h2>
-            <img src="" alt="">
-            <p>testo di descrizione</p>
-            <a href="#">link</a>
-        </div>
-    </div>-->
 </body>
 </html>

@@ -35,16 +35,14 @@ incanevaApp.controller('mainController', ['$scope', '$http', '$httpParamSerializ
         }
     };
 
-    $scope.openEvent = function(size) {
+    $scope.openDetails = function(event, size) {
         var modalInstance = $uibModal.open({
-            animation: $scope.animationsEnabled,
-            templateUrl: 'app/views/details.modal.html',
-            controller: 'ModalInstanceCtrl',
+            animation: true,
+            templateUrl: 'app/views/modal.view.html',
+            controller: 'modalController',
             size: size,
             resolve: {
-                items: function () {
-                    return $scope.items;
-                }
+                event: event
             }
         });
     }
