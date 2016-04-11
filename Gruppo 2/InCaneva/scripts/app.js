@@ -4,13 +4,14 @@
 
 var app = angular.module('incanevaApp', []);
 
-app.controller('main', function ($scope, $http) {
+app.controller('main', function ($scope, $http, $sce) {
     
     var json;
     var currentMonth = new Date().getMonth() + 1;
 
     $scope.year = 2016;
     $scope.events = [];
+    $scope.modal = {};
     
     $scope.loadData = function (blog, old, limit, offset, filter) {
 
@@ -38,8 +39,6 @@ app.controller('main', function ($scope, $http) {
                     $scope.events.push(el)
                 }
             });
-
-            console.log($scope.events);
         }
 
         if($scope.events.length == 0) {
@@ -48,7 +47,13 @@ app.controller('main', function ($scope, $http) {
         }
     };
 
-
+    $scope.openModal = function (id) {
+        $scope.modal = {};
+        $scope.modal = jQuery.extend({}, json[id]);
+        $scope.modal.post_content.replace("\r\n", "<br>");
+        $scope.modal.post_content =  $sce.trustAsHtml($scope.modal.post_content);
+        $('#contentModal').modal('show');
+    };
     
     $scope.loadData("1,6,7,8", "true", "", "", "");
 
