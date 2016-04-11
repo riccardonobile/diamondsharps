@@ -7,5 +7,7 @@
     <p ng-bind-html="sanitize(event.post_content)"></p>
 </div>
 <div class="modal-footer">
-    <a href="http://incaneva.it" class="btn btn-primary" role="button">Link al post originale</a>
+    <a ng-href="{{event.permalink}}" class="btn btn-primary" role="button">Link al post originale</a>
+    <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{event.permalink}}" target="_blank">Condividi su Facebook</a>
+    <a ng-href="https://twitter.com/home?status={{event.permalink}}" target="_blank">Condividi su Twitter</a>
 </div>
