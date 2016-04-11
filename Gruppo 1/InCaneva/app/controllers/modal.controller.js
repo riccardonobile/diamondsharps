@@ -1,4 +1,4 @@
-incanevaApp.controller('modalController', ['$scope', '$uibModalInstance', 'event', function($scope, $uibModalInstance, event) {
+incanevaApp.controller('modalController', ['$scope', '$uibModalInstance', 'event', '$sce',function($scope, $uibModalInstance, event, $sce) {
 
     $scope.event = event;
 
@@ -7,6 +7,6 @@ incanevaApp.controller('modalController', ['$scope', '$uibModalInstance', 'event
     };
 
     $scope.sanitize = function(content) {
-        return content.replace(/\n\r/g, '<br>');
+        return $sce.trustAsHtml(content.replace(/\n\r/g, '<br>'));
     };
 }]);

@@ -42,9 +42,7 @@ incanevaApp.controller('mainController', ['$scope', '$http', '$httpParamSerializ
             controller: 'modalController',
             size: size,
             resolve: {
-                event: function () {
-                    return event;
-                }
+                event: event
             }
         });
     }
