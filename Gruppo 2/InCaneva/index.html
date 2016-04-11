@@ -149,10 +149,9 @@
 
                             <h3>{{el.post_title}}</h3>
                             <h5>{{el.evcal_start_date}}</h5>
-                            <a ng-click="openModal(key)" target="_blank"> <img ng-src="{{el.post_thumbnail}}" class="
-                            img-thumbnail" height="200"></a>
+                            <p><a href="#" ng-click="openModal(key)">Leggi altro...</a></p>
+                            <a ng-click="openModal(key)" target="_blank"> <img ng-src="{{el.post_thumbnail}}" class="img-responsive img-thumbnail"></a>
                             <p>
-                                <a href="#" ng-click="openModal(key)">Leggi altro...</a>
                                 <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{el.permalink}}" target="_blank">Condividi su Facebook</a>
                                 <a ng-href="https://twitter.com/home?status={{el.permalink}}" target="_blank">Condividi su Twitter</a>
                             </p>

@@ -29,6 +29,7 @@ app.controller('main', function ($scope, $http, $sce) {
 
     $scope.changeYear = function (year) {
         $scope.year = year;
+        $scope.loadData("1,6,7,8", "true", "", "", "");
     };
 
     $scope.filterByDate = function (month) {
