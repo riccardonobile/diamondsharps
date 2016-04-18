@@ -1,0 +1,27 @@
+<md-content layout="column" layout-align="center center">
+    <md-card md-theme-watch>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Welcome!</span>
+                <span class="md-subhead">Please login to continue</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <div class="md-media-lg card-media">
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <md-icon md-font-set="material-icons">email</md-icon>
+                    <input ng-model="user.email" type="email">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Password</label>
+                    <md-icon md-font-set="material-icons">lock</md-icon>
+                    <input ng-model="user.password" type="password">
+                </md-input-container>
+            </div>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="login()">Login</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>

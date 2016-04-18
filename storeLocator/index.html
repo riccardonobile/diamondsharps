@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="storeLocator">
+<head ng-controller="headController">
+    <meta charset="UTF-8">
+    <title>Store Locator</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="{{theme.color}}">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+    <script src="bower_components/crypto-js/crypto-js.js"></script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/app.theme.js"></script>
+    <script src="app/app.constants.js"></script>
+    <script src="app/app.routes.js"></script>
+    <script src="app/services/service.headColor.js"></script>
+    <script src="app/factories/factory.authManager.js"></script>
+    <script src="app/factories/factory.storeManager.js"></script>
+    <script src="app/factories/factory.storageManager.js"></script>
+    <script src="app/factories/factory.authInterceptor.js"></script>
+    <script src="app/controllers/controller.head.js"></script>
+    <script src="app/controllers/controller.main.js"></script>
+    <script src="app/controllers/controller.stores.js"></script>
+    <script src="app/controllers/controller.details.js"></script>
+    <script src="app/controllers/controller.login.js"></script>
+</head>
+<body ng-controller="mainController">
+<md-content>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+                <md-icon md-font-set="material-icons">store</md-icon>
+            </md-button>
+            <h2>
+                <span>Store Locator</span>
+            </h2>
+        </div>
+    </md-toolbar>
+</md-content>
+<md-content ng-view>
+
+</md-content>
+</body>
+</html>

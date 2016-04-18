@@ -1,0 +1,5 @@
+#ignore .idea WebStorm folder
+.idea/
+
+#ignore bower_components
+bower_components/
