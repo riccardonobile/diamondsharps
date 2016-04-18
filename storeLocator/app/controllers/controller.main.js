@@ -9,11 +9,13 @@ storeLocator.controller('mainController', ['$rootScope', '$scope', '$location', 
 
     $rootScope.$on('authorized', function() {
         $scope.session = storageManager.getSession();
+        console.log("login");
     });
 
     $rootScope.$on('unauthorized', function() {
         $scope.session = storageManager.setSession(null);
         $location.url('/login');
+        console.log("no login");
     });
 
     $scope.session = storageManager.getSession();

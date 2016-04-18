@@ -1,4 +1,4 @@
-storeLocator.service('storageManager', ['$localStorage', function($localStorage) {
+storeLocator.factory('storageManager', ['$localStorage', function($localStorage) {
     var storage_manager = {};
 
     storage_manager.setSession = function(sessionData) {
