@@ -1,4 +1,4 @@
-storeLocator.service('authInterceptor', ['$rootScope', 'storageManager', function($rootScope, storageManager) {
+storeLocator.factory('authInterceptor', ['$rootScope', 'storageManager', function($rootScope, storageManager) {
     var auth_interceptor = {};
 
     auth_interceptor.request = function(config) {

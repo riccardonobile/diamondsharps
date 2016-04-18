@@ -1,4 +1,4 @@
-storeLocator.service('storeManager', ['$http', '$httpParamSerializerJQLike', 'appConfig', function($http, $httpParamSerializerJQLike, appConfig) {
+storeLocator.factory('storeManager', ['$http', '$httpParamSerializerJQLike', 'appConfig', function($http, $httpParamSerializerJQLike, appConfig) {
     var store_manager = {};
 
     store_manager.getAll = function(completionHandler) {

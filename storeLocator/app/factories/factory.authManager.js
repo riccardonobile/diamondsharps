@@ -1,4 +1,4 @@
-storeLocator.service('authManager', ['$http', '$httpParamSerializerJQLike', 'appConfig', function($http, $httpParamSerializerJQLike, appConfig) {
+storeLocator.factory('authManager', ['$http', '$httpParamSerializerJQLike', 'appConfig', function($http, $httpParamSerializerJQLike, appConfig) {
     var auth_manager = {};
 
     auth_manager.login = function(email, password, completionHandler) {
