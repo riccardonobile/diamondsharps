@@ -8,16 +8,19 @@ storeLocator.run(['$rootScope', '$location', 'storageManager', 'sessionManager',
                 $rootScope.$broadcast('unauthorized');
             }
         });
+        if(storageManager.getSession() !== null) {
+            $rootScope.authorized = true;
+        } else {
+            $rootScope.authorized = false;
+        }
     });
 
     $rootScope.$on('authorized', function() {
         //$scope.session = storageManager.getSession();
-        $rootScope.authorized = true;
     });
 
     $rootScope.$on('unauthorized', function() {
         storageManager.setSession(null);
-        $rootScope.authorized = false;
         $location.path('/login');
     });
 }]);
