@@ -20,10 +20,13 @@ storeLocator.factory('authManager', ['$http', '$httpParamSerializerJQLike', 'app
             if(res.success) {
                 completionHandler(null, (res.data||[]));
             } else {
-                completionHandler(true);
+                completionHandler(true, res);
             }
         }).error(function() {
-            completionHandler(true);
+            completionHandler(true, {
+                errorCode: 0,
+                errorMessage: 'Error on login request'
+            });
         });
     };
 
