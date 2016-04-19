@@ -1,12 +1,9 @@
 storeLocator.controller('storesController', ['$scope', 'storeManager', 'uiGmapGoogleMapApi', '$geolocation', function($scope, storeManager, uiGmapGoogleMapApi, $geolocation) {
-    $scope.listStores = function() {
-        storeManager.getAll(function(err, resp) {
-            if(!err) {
-                console.log(resp);
-            }
-        });
-    };
-
+    storeManager.getAll(function(err, resp) {
+        if(!err) {
+            $scope.stores = resp;
+        }
+    });
 
     $geolocation.watchPosition({
         timeout: 60000,

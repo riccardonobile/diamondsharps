@@ -2,7 +2,15 @@
     <ui-gmap-google-map center='storesMap.center' zoom='storesMap.zoom'></ui-gmap-google-map>
 </section>
 
-<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-    <md-button ng-href="#/details" class="md-raised md-primary">Details</md-button>
-    <md-button ng-click="listStores()" class="md-raised md-primary">List stores (in console)</md-button>
+<section>
+    <md-list>
+        <md-list-item class="md-3-line" ng-repeat="store in stores">
+            <md-icon md-font-set="material-icons">store</md-icon>
+            <div class="md-list-item-text" layout="column">
+                <h3>{{store.name}}</h3>
+                <h4>{{store.address}} (lat:{{store.latitude}}, long:{{store.longitude}})</h4>
+                <p>{{store.phone}}</p>
+            </div>
+        </md-list-item>
+    </md-list>
 </section>
