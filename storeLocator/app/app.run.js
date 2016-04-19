@@ -4,17 +4,20 @@ storeLocator.run(['$rootScope', '$location', 'storageManager', 'sessionManager',
         sessionManager.verify(function(err, res) {
             if(err && _requireLogin) {
                 event.preventDefault();
-                $location.path('/login');
+                //$location.path('/login');
+                $rootScope.$broadcast('unauthorized');
             }
         });
     });
 
     $rootScope.$on('authorized', function() {
         //$scope.session = storageManager.getSession();
+        $rootScope.authorized = true;
     });
 
     $rootScope.$on('unauthorized', function() {
         storageManager.setSession(null);
+        $rootScope.authorized = false;
         $location.path('/login');
     });
 }]);
