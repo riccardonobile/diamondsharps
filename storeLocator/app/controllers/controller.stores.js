@@ -5,7 +5,7 @@ storeLocator.controller('storesController', ['$scope', 'storeManager', 'uiGmapGo
                 console.log(resp);
             }
         });
-    }
+    };
 
 
     uiGmapGoogleMapApi.then(function(maps) {
