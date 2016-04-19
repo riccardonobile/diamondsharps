@@ -30,10 +30,6 @@ storeLocator.factory('sessionManager', ['$http', '$httpParamSerializerJQLike', '
         }
     };
 
-    session_manager.logout = function(completionHandler) {
-        completionHandler(null, true);
-    };
-
     return session_manager;
 }]);
 
