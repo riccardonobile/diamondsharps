@@ -1,5 +1,5 @@
 storeLocator.run(['$rootScope', '$location', 'storageManager', function($rootScope, $location ,storageManager) {
-    $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+    $rootScope.$on('$routeChangeStart', function(event, toState, toParams) {
         var requireLogin = toState.data.requireLogin;
 
         if (requireLogin && storageManager.getSession() === null) {
