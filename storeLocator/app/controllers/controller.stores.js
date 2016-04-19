@@ -9,7 +9,12 @@ storeLocator.controller('storesController', ['$scope', 'storeManager', 'uiGmapGo
 
 
     uiGmapGoogleMapApi.then(function(maps) {
-        console.log(maps);
-        $scope.storesMap = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+        $scope.storesMap = {
+            center: {
+                latitude: 45,
+                longitude: -73
+            },
+            zoom: 8
+        };
     });
 }]);
