@@ -13,7 +13,7 @@ storeLocator.factory('authInterceptor', ['$rootScope', 'storageManager', functio
     };
 
     auth_interceptor.responseError = function(res) {
-        if(!res.status) {
+        if(!res.data.success) {
             $rootScope.$broadcast('unauthorized');
         }
     };
