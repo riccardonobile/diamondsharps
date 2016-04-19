@@ -4,6 +4,5 @@ storeLocator.controller('mainController', ['$rootScope', '$scope', '$location', 
             storageManager.setSession(null);
             $location.url('/login');
         });
-        return false;
     };
 }]);
