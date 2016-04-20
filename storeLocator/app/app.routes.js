@@ -24,7 +24,7 @@ storeLocator.config(['$routeProvider', '$locationProvider', '$httpProvider', fun
             requireLogin: false
         }
     }).otherwise({
-        redirectTo: '/'
+        redirectTo: '/map'
     });
     $locationProvider.html5Mode(false);
     $httpProvider.interceptors.push('authInterceptor');

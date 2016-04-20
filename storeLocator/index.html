@@ -54,6 +54,18 @@
                 <span>Store Locator</span>
             </h2>
             <span flex></span>
+            <md-button class="md-icon-button" aria-label="Exit" ng-href="#/map" ng-show="authorized && currentRoot == '/list'">
+                <md-tooltip md-direction="left">
+                    Map view
+                </md-tooltip>
+                <md-icon md-font-set="material-icons">map</md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Exit" ng-href="#list" ng-show="authorized && currentRoot == '/map'">
+                <md-tooltip md-direction="left">
+                    List view
+                </md-tooltip>
+                <md-icon md-font-set="material-icons">list</md-icon>
+            </md-button>
             <md-button class="md-icon-button" aria-label="Exit" ng-click="logout()" ng-show="authorized">
                 <md-tooltip md-direction="left">
                     Exit
