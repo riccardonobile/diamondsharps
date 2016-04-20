@@ -2,6 +2,17 @@ storeLocator.controller('storesController', ['$scope', 'storeManager', 'uiGmapGo
     storeManager.getAll(function(err, resp) {
         if(!err) {
             $scope.stores = resp;
+
+            $scope.storesMarkers = [];
+
+            $scope.stores.forEach(function(el, key) {
+                var marker = {
+                    latitude: el.latitude,
+                    longitude: el.longitude,
+                    id: key
+                };
+                $scope.storesMarkers.push(marker);
+            });
         }
     });
 
@@ -21,7 +32,7 @@ storeLocator.controller('storesController', ['$scope', 'storeManager', 'uiGmapGo
                         latitude: newValue.latitude,
                         longitude: newValue.longitude
                     },
-                    zoom: 10
+                    zoom: 4
                 };
             }
         }, true);

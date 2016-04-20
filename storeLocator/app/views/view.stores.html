@@ -1,5 +1,14 @@
 <section>
-    <ui-gmap-google-map center='storesMap.center' zoom='storesMap.zoom'></ui-gmap-google-map>
+    <ui-gmap-google-map
+            center='storesMap.center'
+            zoom='storesMap.zoom'
+    >
+        <ui-gmap-markers
+                models="storesMarkers"
+                coords="'self'"
+                <!--icon="'icon'"-->
+        ></ui-gmap-markers>
+    </ui-gmap-google-map>
 </section>
 
 <section>
