@@ -17,6 +17,7 @@ storeLocator.run(['$rootScope', '$location', 'storageManager', 'sessionManager',
 
     $rootScope.$on('authorized', function() {
         //$scope.session = storageManager.getSession();
+        $location.path('/');
     });
 
     $rootScope.$on('unauthorized', function() {
