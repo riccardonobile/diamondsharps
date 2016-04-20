@@ -1,11 +1,9 @@
 storeLocator.controller('storesMapController', ['$scope', 'storeManager', 'uiGmapGoogleMapApi', '$geolocation', function($scope, storeManager, uiGmapGoogleMapApi, $geolocation) {
+    $scope.storesMarkers = [];
+
     storeManager.getAll(function(err, resp) {
         if(!err) {
-            $scope.stores = res;
-
-            $scope.storesMarkers = [];
-
-            $scope.stores.forEach(function(el, key) {
+            resp.forEach(function(el, key) {
                 var marker = {
                     latitude: el.latitude,
                     longitude: el.longitude,
