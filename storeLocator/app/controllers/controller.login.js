@@ -7,7 +7,7 @@ storeLocator.controller('loginController', ['$scope', '$rootScope', '$location',
             if(!err) {
                 storageManager.setSession(resp);
                 $rootScope.$broadcast('authorized');
-                $location.url('/');
+                // $location.url('/');
             }
         });
     }
