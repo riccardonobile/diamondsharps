@@ -14,15 +14,27 @@ storeLocator.controller('storesMapController', ['$scope', 'storeManager', 'uiGma
         }
     });
 
-    $geolocation.watchPosition({
+    /*$geolocation.watchPosition({
         timeout: 60000,
         maximumAge: 250,
         enableHighAccuracy: true
     });
 
-    $scope.myPosition = $geolocation.position;
+    $scope.myPosition = $geolocation.position;*/
 
     uiGmapGoogleMapApi.then(function(maps) {
+        $geolocation.getCurrentPosition({
+            timeout: 60000
+        }).then(function(position) {
+            $scope.storesMap = {
+                center: {
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude
+                },
+                zoom: 4
+            };
+        });
+        /*
         $scope.$watch('myPosition.coords', function (newValue, oldValue) {
             if (newValue !== undefined) {
                 $scope.storesMap = {
@@ -34,5 +46,6 @@ storeLocator.controller('storesMapController', ['$scope', 'storeManager', 'uiGma
                 };
             }
         }, true);
+        */
     });
 }]);
