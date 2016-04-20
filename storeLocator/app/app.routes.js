@@ -1,7 +1,13 @@
 storeLocator.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
-    $routeProvider.when('/', {
-        templateUrl: 'app/views/view.stores.html',
-        controller: 'storesController',
+    $routeProvider.when('/map', {
+        templateUrl: 'app/views/view.storesMap.html',
+        controller: 'storesMapController',
+        data: {
+            requireLogin: true
+        }
+    }).when('/list', {
+        templateUrl: 'app/views/view.storesList.html',
+        controller: 'storesListController',
         data: {
             requireLogin: true
         }

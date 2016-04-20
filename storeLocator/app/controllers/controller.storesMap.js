@@ -1,7 +1,7 @@
-storeLocator.controller('storesController', ['$scope', 'storeManager', 'uiGmapGoogleMapApi', '$geolocation', function($scope, storeManager, uiGmapGoogleMapApi, $geolocation) {
+storeLocator.controller('storesMapController', ['$scope', 'storeManager', 'uiGmapGoogleMapApi', '$geolocation', function($scope, storeManager, uiGmapGoogleMapApi, $geolocation) {
     storeManager.getAll(function(err, resp) {
         if(!err) {
-            $scope.stores = resp;
+            $scope.stores = res;
 
             $scope.storesMarkers = [];
 

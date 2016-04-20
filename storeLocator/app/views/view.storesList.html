@@ -1,17 +1,4 @@
 <section>
-    <ui-gmap-google-map
-            center='storesMap.center'
-            zoom='storesMap.zoom'
-    >
-        <ui-gmap-markers
-                models="storesMarkers"
-                coords="'self'"
-                <!--icon="'icon'"-->
-        ></ui-gmap-markers>
-    </ui-gmap-google-map>
-</section>
-
-<section>
     <md-list>
         <md-list-item class="md-3-line" ng-repeat="store in stores">
             <md-icon md-font-set="material-icons">store</md-icon>
