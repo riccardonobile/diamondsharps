@@ -11,7 +11,7 @@ storeLocator.config(['$routeProvider', '$locationProvider', '$httpProvider', fun
         data: {
             requireLogin: true
         }
-    }).when('/details', {
+    }).when('/details/:guid', {
         templateUrl: 'app/views/view.details.html',
         controller: 'detailsController',
         data: {
