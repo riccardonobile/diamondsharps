@@ -3,7 +3,6 @@ storeLocator.controller('detailsController', ['$scope', '$routeParams', 'storeMa
     storeManager.get(_guid, function(err, resp) {
         if(!err) {
             $scope.store = resp;
-            console.log(resp);
         }
     });
 }]);
