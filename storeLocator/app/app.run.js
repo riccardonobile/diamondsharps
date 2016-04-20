@@ -1,7 +1,6 @@
 storeLocator.run(['$rootScope', '$location', 'storageManager', 'sessionManager', function($rootScope, $location, storageManager, sessionManager) {
     $rootScope.$on('$routeChangeStart', function(event, current, next) {
         $rootScope.currentRoot = current.$$route.originalPath;
-        console.log(current);
         var _requireLogin = current.$$route.data.requireLogin;
         sessionManager.verify(function(err, res) {
             if(err && _requireLogin) {
