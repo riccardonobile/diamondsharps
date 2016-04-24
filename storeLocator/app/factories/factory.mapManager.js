@@ -26,8 +26,10 @@ storeLocator.factory('mapManager', ['appConfig', function(appConfig) {
                     });
 
                     var infowindow = new google.maps.InfoWindow({
-                        content: '<h2>' + el.name + '</h2>' +
-                        '<a href="#/details/' + el.guid + '">Details</a>'
+                        content: '<span class="md-headline">' + el.name + '</span><br>' +
+                        '<span class="md-subhead">' + el.address + '</span><br>' +
+                        '<span class="md-subhead">' + el.phone + '</span><br>' +
+                        '<a href="#/details/' + el.guid + '">More details</a>'
                     });
 
                     marker.addListener('click', function() {

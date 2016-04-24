@@ -32,3 +32,6 @@ section.map-container {
         top: 45px;
     }
 }
+.md-subhead {
+    color: rgba(0,0,0,0.54);
+}
