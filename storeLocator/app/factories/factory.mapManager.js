@@ -24,13 +24,16 @@ storeLocator.factory('mapManager', ['appConfig', function(appConfig) {
                         },
                         title: el.name
                     });
+
                     var infowindow = new google.maps.InfoWindow({
-                        content: el.name
+                        content: '<h2>' + el.name + '</h2>' +
+                        '<a href="#/details/' + el.guid + '">Details</a>'
                     });
+
                     marker.addListener('click', function() {
-                        map.setZoom(15);
-                        map.setCenter(marker.getPosition());
-                        infowindow.open(map, marker);
+                        map_manager.map.setZoom(15);
+                        map_manager.map.setCenter(marker.getPosition());
+                        infowindow.open(map_manager.map, marker);
                     });
                 });
             });
