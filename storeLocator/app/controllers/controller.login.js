@@ -9,7 +9,7 @@ storeLocator.controller('loginController', ['$scope', '$rootScope', '$location',
                 $rootScope.$broadcast('authorized');
                 // $location.url('/');
             } else {
-                $mdToast.show($mdToast.simple().textContent("Ops, There was an error while trying to login: " + resp.errorMessage));
+                $mdToast.show($mdToast.simple().textContent("Ops, there was an error while trying to login: " + resp.errorMessage));
             }
         });
     }
