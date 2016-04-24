@@ -1,51 +1,16 @@
-storeLocator.controller('storesMapController', ['$scope', 'storeManager', 'uiGmapGoogleMapApi', '$geolocation', function($scope, storeManager, uiGmapGoogleMapApi, $geolocation) {
+storeLocator.controller('storesMapController', ['$scope', 'storeManager', '$geolocation', 'mapManager', function($scope, storeManager, $geolocation, mapManager) {
     $scope.storesMarkers = [];
 
-    storeManager.getAll(function(err, resp) {
-        if(!err) {
-            resp.forEach(function(el, key) {
-                var marker = {
-                    latitude: el.latitude,
-                    longitude: el.longitude,
-                    id: key
-                };
-                $scope.storesMarkers.push(marker);
-            });
-        }
+    $geolocation.getCurrentPosition({
+        timeout: 60000
+    }).then(function(position) {
+        mapManager.makeMap(mapManager.placeMarkers, document.getElementById('map'), {
+            center: {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            },
+            zoom: 8
+        }, storeManager.getAll);
     });
 
-    /*$geolocation.watchPosition({
-        timeout: 60000,
-        maximumAge: 250,
-        enableHighAccuracy: true
-    });
-
-    $scope.myPosition = $geolocation.position;*/
-
-    uiGmapGoogleMapApi.then(function(maps) {
-        $geolocation.getCurrentPosition({
-            timeout: 60000
-        }).then(function(position) {
-            $scope.storesMap = {
-                center: {
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.longitude
-                },
-                zoom: 4
-            };
-        });
-        /*
-        $scope.$watch('myPosition.coords', function (newValue, oldValue) {
-            if (newValue !== undefined) {
-                $scope.storesMap = {
-                    center: {
-                        latitude: newValue.latitude,
-                        longitude: newValue.longitude
-                    },
-                    zoom: 4
-                };
-            }
-        }, true);
-        */
-    });
 }]);
