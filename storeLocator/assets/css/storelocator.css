@@ -3,6 +3,24 @@
     white-space: nowrap
 }
 
+
+/* Fix temporaneo per fare la mappa alta al 100% */
+md-content.map-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+}
+md-content.map-content,
+section.map-container {
+    height: 100%;
+    width: 100%;
+}
 #map {
-    height: 100vh;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
