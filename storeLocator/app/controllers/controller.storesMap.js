@@ -1,5 +1,4 @@
 storeLocator.controller('storesMapController', ['$scope', 'storeManager', '$geolocation', 'mapManager', function($scope, storeManager, $geolocation, mapManager) {
-    $scope.storesMarkers = [];
 
     $geolocation.getCurrentPosition({
         timeout: 60000
