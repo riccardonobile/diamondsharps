@@ -1,23 +1,16 @@
-storeLocator.controller('storesMapController', ['$scope', 'storeManager', '$geolocation', function($scope, storeManager, $geolocation) {
+storeLocator.controller('storesMapController', ['$scope', 'storeManager', '$geolocation', 'mapManager', function($scope, storeManager, $geolocation, mapManager) {
     $scope.storesMarkers = [];
-
-    storeManager.getAll(function(err, resp) {
-        if(!err) {
-            resp.forEach(function(el, key) {
-                var marker = {
-                    latitude: el.latitude,
-                    longitude: el.longitude,
-                    id: key
-                };
-                $scope.storesMarkers.push(marker);
-            });
-        }
-    });
 
     $geolocation.getCurrentPosition({
         timeout: 60000
     }).then(function(position) {
-        console.log("Position", position);
+        mapManager.makeMap(mapManager.placeMarkers, document.getElementById('map'), {
+            center: {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            },
+            zoom: 8
+        }, storeManager.getAll);
     });
 
 }]);
