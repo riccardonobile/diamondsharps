@@ -12,18 +12,19 @@ storeLocator.factory('authManager', ['$http', 'appConfig', function($http, appCo
             password: _password
         };
 
-        $http.post(appConfig.authUrl, _credentials).success(function(res) {
-            if(res.success) {
-                completionHandler(null, (res.data||[]));
-            } else {
-                completionHandler(true, res);
-            }
-        }).error(function() {
-            completionHandler(true, {
-                errorCode: 0,
-                errorMessage: 'Error on login request'
+        $http.post(appConfig.authUrl, _credentials)
+            .success(function(res) {
+                if(res.success) {
+                    completionHandler(null, (res.data||[]));
+                } else {
+                    completionHandler(true, res);
+                }
+            }).error(function() {
+                completionHandler(true, {
+                    errorCode: 0,
+                    errorMessage: 'Error on login request'
+                });
             });
-        });
     };
 
     auth_manager.logout = function(completionHandler) {

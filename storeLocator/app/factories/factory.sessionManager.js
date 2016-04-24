@@ -6,18 +6,19 @@ storeLocator.factory('sessionManager', ['$http', 'appConfig', 'storageManager',f
         var _session = storageManager.getSession();
         if(_session) {
             _session = _session.session;
-            $http.get(appConfig.sessionUrl + _session, {session: _session}).success(function(res) {
-                if(res.success) {
-                    completionHandler(null, (res.data||[]));
-                } else {
-                    completionHandler(true, res);
-                }
-            }).error(function() {
-                completionHandler(true, {
-                    errorCode: 0,
-                    errorMessage: 'Error on login request'
+            $http.get(appConfig.sessionUrl + _session, {session: _session})
+                .success(function(res) {
+                    if(res.success) {
+                        completionHandler(null, (res.data||[]));
+                    } else {
+                        completionHandler(true, res);
+                    }
+                }).error(function() {
+                    completionHandler(true, {
+                        errorCode: 0,
+                        errorMessage: 'Error on login request'
+                    });
                 });
-            });
         } else {
             completionHandler(true, {
                 errorCode: 0,

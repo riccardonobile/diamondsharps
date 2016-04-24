@@ -18,7 +18,7 @@ storeLocator.factory('storeManager', ['$http', 'appConfig', function($http, appC
     };
 
     store_manager.get = function(guid, completionHandler) {
-        $http.get(appConfig.apiUrl + (guid||""))
+        $http.get(appConfig.apiUrl + '/' + (guid||""))
             .success(function(res) {
                 if(res.success) {
                     completionHandler(null, (res.data||[]));
