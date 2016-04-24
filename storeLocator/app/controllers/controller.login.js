@@ -1,4 +1,4 @@
-storeLocator.controller('loginController', ['$scope', '$rootScope', '$location', 'authManager', 'storageManager', function($scope, $rootScope, $location, authManager, storageManager) {
+storeLocator.controller('loginController', ['$scope', '$rootScope', '$location', '$mdToast', 'authManager', 'storageManager', function($scope, $rootScope, $location, $mdToast,authManager, storageManager) {
     if (storageManager.getSession() !== null) {
         $location.url('/');
     }
@@ -8,6 +8,8 @@ storeLocator.controller('loginController', ['$scope', '$rootScope', '$location',
                 storageManager.setSession(resp);
                 $rootScope.$broadcast('authorized');
                 // $location.url('/');
+            } else {
+                $mdToast.show($mdToast.simple().textContent("Ops, There was an error while trying to login: " + resp.errorMessage));
             }
         });
     }
