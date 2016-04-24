@@ -1,3 +1,3 @@
-storeLocator.controller('headController', ['$scope', 'headColorService', function($scope, headColorService) {
-    $scope.theme = headColorService;
+storeLocator.controller('headController', ['$scope', function($scope) {
+    $scope.theme = '#FFC107';
 }]);
