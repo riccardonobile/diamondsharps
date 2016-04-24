@@ -1,4 +1,4 @@
-storeLocator.factory('authManager', ['$http', '$httpParamSerializerJQLike', 'appConfig', function($http, $httpParamSerializerJQLike, appConfig) {
+storeLocator.factory('authManager', ['$http', 'appConfig', function($http, appConfig) {
     var auth_manager = {};
 
     auth_manager.login = function(email, password, completionHandler) {
@@ -12,11 +12,7 @@ storeLocator.factory('authManager', ['$http', '$httpParamSerializerJQLike', 'app
             password: _password
         };
 
-        $http.post(appConfig.authUrl, $httpParamSerializerJQLike(_credentials), {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
-        }).success(function(res) {
+        $http.post(appConfig.authUrl, _credentials).success(function(res) {
             if(res.success) {
                 completionHandler(null, (res.data||[]));
             } else {

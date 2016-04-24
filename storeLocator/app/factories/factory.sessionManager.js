@@ -1,4 +1,4 @@
-storeLocator.factory('sessionManager', ['$http', '$httpParamSerializerJQLike', 'appConfig', 'storageManager',function($http, $httpParamSerializerJQLike, appConfig, storageManager) {
+storeLocator.factory('sessionManager', ['$http', 'appConfig', 'storageManager',function($http, appConfig, storageManager) {
     var session_manager = {};
 
     session_manager.verify = function(completionHandler) {
@@ -6,11 +6,7 @@ storeLocator.factory('sessionManager', ['$http', '$httpParamSerializerJQLike', '
         var _session = storageManager.getSession();
         if(_session) {
             _session = _session.session;
-            $http.get(appConfig.sessionUrl + _session, $httpParamSerializerJQLike({session: _session}), {
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            }).success(function(res) {
+            $http.get(appConfig.sessionUrl + _session, {session: _session}).success(function(res) {
                 if(res.success) {
                     completionHandler(null, (res.data||[]));
                 } else {
