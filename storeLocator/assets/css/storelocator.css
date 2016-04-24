@@ -3,14 +3,12 @@
     white-space: nowrap
 }
 
-
-/* Fix temporaneo per fare la mappa alta al 100% */
+/* Fix temporaneo per fare la mappa alta al 100% senza lo scrolling verticale */
 md-content.map-header {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 64px;
 }
 md-content.map-content,
 section.map-container {
@@ -23,4 +21,14 @@ section.map-container {
     left: 0;
     right: 0;
     bottom: 0;
+}
+@media only screen and (min-width: 0) and (max-width: 959px) and (orientation: portrait) {
+    #map {
+        top: 56px;
+    }
+}
+@media only screen and (min-width: 0) and (max-width: 959px) and (orientation: landscape) {
+    #map {
+        top: 45px;
+    }
 }
