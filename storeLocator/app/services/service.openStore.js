@@ -13,7 +13,7 @@ storeLocator.service('openStore', [ function() {
     };
 
     this.isValid = function() {
-        return ((this.openStore !== undefined) && (_.key(this.openStore)||[]).length > 0);
+        return ((this.openStore !== undefined) && (_.keys(this.openStore)||[]).length > 0);
     };
 
     this.clear = function() {
