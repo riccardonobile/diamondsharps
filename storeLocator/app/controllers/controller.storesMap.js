@@ -9,7 +9,9 @@ storeLocator.controller('storesMapController', ['$scope', 'storeManager', '$geol
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             },
-            zoom: 8
+            zoom: 8,
+            disableDefaultUI: true,
+            zoomControl: true
         }, storeManager.getAll);
     });
 

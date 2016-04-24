@@ -43,7 +43,7 @@
     <script src="app/controllers/controller.login.js"></script>
 </head>
 <body ng-controller="mainController">
-<md-content>
+<md-content ng-class="{'map-header':currentRoot == '/map'}">
     <md-toolbar>
         <div class="md-toolbar-tools">
             <h2>
@@ -72,7 +72,7 @@
         </div>
     </md-toolbar>
 </md-content>
-<md-content ng-view>
+<md-content ng-class="{'map-content':currentRoot == '/map'}" ng-view>
 
 </md-content>
 </body>
