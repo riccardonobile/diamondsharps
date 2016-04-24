@@ -27,6 +27,8 @@ storeLocator.factory('mapManager', ['appConfig', function(appConfig) {
                         content: el.name
                     });
                     marker.addListener('click', function() {
+                        map.setZoom(15);
+                        map.setCenter(marker.getPosition());
                         infowindow.open(map, marker);
                     });
                 });
