@@ -1,3 +1,3 @@
 storeLocator.controller('headController', ['$scope', function($scope) {
-    $scope.theme = '#FFC107';
+    $scope.theme.color = '#FFC107';
 }]);
