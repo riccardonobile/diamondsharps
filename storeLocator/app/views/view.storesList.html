@@ -5,12 +5,17 @@
     </div>
 
     <md-list flex>
+<<<<<<< HEAD
         <md-list-item class="md-3-line" ng-hide="loading" ng-repeat="store in stores" ng-href="#/details/{{store.guid}}">
+=======
+        <md-list-item class="md-3-line md-4-line" ng-repeat="store in stores | orderBy : 'distance'" ng-href="#/details/{{store.guid}}">
+>>>>>>> 4999cb81976b66564746d77cb73e118a92a784d8
             <md-icon md-font-set="material-icons" class="md-avatar-icon">store</md-icon>
             <div class="md-list-item-text" layout="column">
                 <h3>{{store.name}}</h3>
                 <h4>{{store.address}}</h4>
                 <p>{{store.phone}}</p>
+                <p>Distance from me: {{store.distance | number}}km</p>
             </div>
             <md-divider ng-if="!$last"></md-divider>
         </md-list-item>
