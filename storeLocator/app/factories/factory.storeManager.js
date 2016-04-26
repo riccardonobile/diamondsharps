@@ -1,6 +1,6 @@
 storeLocator.factory('storeManager', ['$http', 'appConfig', 'storesService', function($http, appConfig, storesService) {
     var store_manager = {};
-
+    
     store_manager.getAll = function(completionHandler) {
         if (storesService.isValid()) {
             completionHandler(null, storesService.get());

@@ -1,6 +1,11 @@
 <section>
+
+    <div layout="row" layout-sm="column" layout-align="space-around" ng-show="loading" layout-padding>
+        <md-progress-circular md-diameter="150px" md-mode="indeterminate"></md-progress-circular>
+    </div>
+
     <md-list flex>
-        <md-list-item class="md-3-line" ng-repeat="store in stores" ng-href="#/details/{{store.guid}}">
+        <md-list-item class="md-3-line" ng-hide="loading" ng-repeat="store in stores" ng-href="#/details/{{store.guid}}">
             <md-icon md-font-set="material-icons" class="md-avatar-icon">store</md-icon>
             <div class="md-list-item-text" layout="column">
                 <h3>{{store.name}}</h3>
