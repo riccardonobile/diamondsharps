@@ -1,4 +1,7 @@
 storeLocator.run(['$rootScope', '$location', 'storageManager', 'sessionManager', function($rootScope, $location, storageManager, sessionManager) {
+
+    var history = [];
+
     $rootScope.$on('$routeChangeStart', function(event, current, next) {
         $rootScope.currentRoot = current.$$route.originalPath;
         var _requireLogin = current.$$route.data.requireLogin;
@@ -16,6 +19,10 @@ storeLocator.run(['$rootScope', '$location', 'storageManager', 'sessionManager',
         }
     });
 
+    $rootScope.$on('$routeChangeSuccess', function() {
+        history.push($location.$$path);
+    });
+
     $rootScope.$on('authorized', function() {
         //$scope.session = storageManager.getSession();
         $location.path('/map');
@@ -25,4 +32,9 @@ storeLocator.run(['$rootScope', '$location', 'storageManager', 'sessionManager',
         storageManager.setSession(null);
         $location.path('/login');
     });
+
+    $rootScope.goBack = function() {
+        var prevUrl = history.length > 1 ? history.splice(-2)[0] : "/";
+        $location.path(prevUrl);
+    };
 }]);

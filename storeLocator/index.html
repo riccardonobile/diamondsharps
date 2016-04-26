@@ -47,6 +47,13 @@
 <md-content ng-class="{'map-header':currentRoot == '/map'}">
     <md-toolbar>
         <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Exit" ng-click="goBack()" ng-show="authorized && currentRoot == '/details/'">
+                <md-tooltip md-direction="bottom">
+                    Go back
+                </md-tooltip>
+                <md-icon md-font-set="material-icons">arrow_back</md-icon>
+            </md-button>
+            <h2 ng-href="#/map">
                 <span>Store Locator</span>
             </h2>
             <span flex></span>
@@ -56,7 +63,7 @@
                 </md-tooltip>
                 <md-icon md-font-set="material-icons">my_location</md-icon>
             </md-button>
-            <md-button class="md-icon-button" aria-label="Exit" ng-href="#list" ng-show="authorized && currentRoot == '/map'">
+            <md-button class="md-icon-button" aria-label="Exit" ng-href="#/list" ng-show="authorized && currentRoot == '/map'">
                 <md-tooltip md-direction="bottom">
                     List view
                 </md-tooltip>
