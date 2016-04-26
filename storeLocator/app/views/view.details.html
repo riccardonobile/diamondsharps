@@ -1,4 +1,7 @@
-<md-card md-theme-watch>
+<div layout="row" layout-sm="column" layout-align="space-around" ng-show="loading" layout-padding>
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<md-card md-theme-watch ng-hide="loading">
     <md-card-title>
         <md-card-title-text>
             <span class="md-headline">{{store.name}}</span>
@@ -27,8 +30,4 @@
         <span class="md-headline">Contacts</span>
         <p>{{store.sales_person.first}} {{store.sales_person.last}} - <a href="mailto:{{store.sales_person.email}}">{{store.sales_person.email}}</a></p>
     </md-card-content>
-    <!--<md-card-actions layout="row" layout-align="end center">
-        <md-button>Action 1</md-button>
-        <md-button>Action 2</md-button>
-    </md-card-actions>-->
 </md-card>
