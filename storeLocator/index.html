@@ -48,16 +48,16 @@
     <md-toolbar>
         <div class="md-toolbar-tools">
 
-            <h2 ng-href="#/map">
-                <span>Store Locator</span>
-            </h2>
-
             <md-button class="md-icon-button" aria-label="Exit" ng-click="goBack()" ng-show="authorized && currentRoot.indexOf('/details/') != -1">
                 <md-tooltip md-direction="bottom">
                     Go back
                 </md-tooltip>
                 <md-icon md-font-set="material-icons">arrow_back</md-icon>
             </md-button>
+            
+            <h2 ng-href="#/map">
+                <span>Store Locator</span>
+            </h2>
 
             <span flex></span>
             <md-button class="md-icon-button" aria-label="Exit" ng-click="centerMap()" ng-show="authorized && currentRoot == '/map'">
