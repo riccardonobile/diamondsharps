@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-storeLocator.controller('storesListController', ['$scope', 'storeManager', function($scope, storeManager) {
-    $scope.loading = true;
-=======
 storeLocator.controller('storesListController', ['$scope', 'storeManager', '$geolocation', 'mapManager', function($scope, storeManager, $geolocation, mapManager) {
->>>>>>> 4999cb81976b66564746d77cb73e118a92a784d8
+    $scope.loading = true;
     storeManager.getAll(function(err, resp) {
         $scope.loading = false;
 
