@@ -6,6 +6,7 @@
                 <h3>{{store.name}}</h3>
                 <h4>{{store.address}}</h4>
                 <p>{{store.phone}}</p>
+                <p>Distance from me: {{store.distance | number}}km</p>
             </div>
             <md-divider ng-if="!$last"></md-divider>
         </md-list-item>
