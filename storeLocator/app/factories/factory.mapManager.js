@@ -8,10 +8,7 @@ storeLocator.factory('mapManager', ['appConfig', function(appConfig) {
             map: map_manager.map,
             position: map_manager.config.center,
             title: "Your position",
-            icon: new google.maps.MarkerImage('assets/img/mobileimgs2.png',
-                new google.maps.Size(22,22),
-                new google.maps.Point(0,18),
-                new google.maps.Point(11,11))
+            icon: new google.maps.MarkerImage('assets/img/geolocation_marker.png')
         });
         myMarker.addListener('click', function() {
             map_manager.map.setZoom(15);
