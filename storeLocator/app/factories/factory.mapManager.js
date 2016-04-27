@@ -13,6 +13,10 @@ storeLocator.factory('mapManager', ['appConfig', function(appConfig) {
                 new google.maps.Point(0,18),
                 new google.maps.Point(11,11))
         });
+        myMarker.addListener('click', function() {
+            map_manager.map.setZoom(15);
+            map_manager.map.setCenter(myMarker.getPosition());
+        });
         if (map_manager.map !== undefined) {
             callback(false, null, dataHandler);
         } else {
