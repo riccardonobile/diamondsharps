@@ -17,12 +17,18 @@
                     <md-input-container class="md-block">
                         <label>Email</label>
                         <md-icon md-font-set="material-icons">email</md-icon>
-                        <input ng-model="user.email" type="email">
+                        <input ng-model="user.email" type="email" required>
+                        <div ng-messages="user.email.$error" role="alert">
+                            <div ng-message="required">This is required.</div>
+                        </div>
                     </md-input-container>
                     <md-input-container class="md-block">
                         <label>Password</label>
                         <md-icon md-font-set="material-icons">lock</md-icon>
-                        <input ng-model="user.password" type="password">
+                        <input ng-model="user.password" type="password" required>
+                        <div ng-messages="user.password.$error" role="alert">
+                            <div ng-message="required">This is required.</div>
+                        </div>
                     </md-input-container>
                 </div>
             </md-card-content>
