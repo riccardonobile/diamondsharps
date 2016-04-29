@@ -1,4 +1,4 @@
-storeLocator.controller('loginController', ['$scope', '$rootScope', '$location', '$mdToast', 'authManager', 'storageManager', function($scope, $rootScope, $location, $mdToast,authManager, storageManager) {
+storeLocator.controller('loginController', ['$scope', '$rootScope', '$location', '$mdDialog', 'authManager', 'storageManager', function($scope, $rootScope, $location, $mdDialog, authManager, storageManager) {
     if (storageManager.getSession() !== null) {
         $location.url('/');
     }
@@ -9,7 +9,15 @@ storeLocator.controller('loginController', ['$scope', '$rootScope', '$location',
                 $rootScope.$broadcast('authorized');
                 // $location.url('/');
             } else {
-                $mdToast.show($mdToast.simple().textContent("Ops, there was an error while trying to login: " + resp.errorMessage));
+                $mdDialog.show(
+                    $mdDialog.alert()
+                        .parent(angular.element(document.querySelector('#popupContainer')))
+                        .clickOutsideToClose(true)
+                        .title('Error while login')
+                        .textContent(resp.errorMessage)
+                        .ariaLabel('Error while login')
+                        .ok('Ok')
+                );
             }
         });
     }
