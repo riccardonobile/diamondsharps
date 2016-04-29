@@ -40,3 +40,6 @@ md-list-item.md-4-line > ._md-no-style {
     height: auto;
     min-height: 110px;
 }
+.md-toolbar-tools > .md-button.md-no-margin-left {
+    margin-left: -8px;
+}
