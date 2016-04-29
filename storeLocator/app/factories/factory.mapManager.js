@@ -10,6 +10,10 @@ storeLocator.factory('mapManager', ['appConfig', function(appConfig) {
             title: "Your position",
             icon: new google.maps.MarkerImage('assets/img/geolocation_marker.png')
         });
+        myMarker.addListener('click', function() {
+            map_manager.map.setZoom(15);
+            map_manager.map.setCenter(myMarker.getPosition());
+        });
         if (map_manager.map !== undefined) {
             callback(false, null, dataHandler);
         } else {
