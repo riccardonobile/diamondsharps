@@ -10,13 +10,14 @@ storeLocator.controller('loginController', ['$scope', '$rootScope', '$location',
                 // $location.url('/');
             } else {
                 $mdDialog.show(
-                    $mdDialog.alert()
+                    $mdDialog.alert(ev)
                         .parent(angular.element(document.querySelector('#popupContainer')))
                         .clickOutsideToClose(true)
                         .title('Error while login')
                         .textContent(resp.errorMessage)
                         .ariaLabel('Error while login')
                         .ok('Ok')
+                        .targetEvent(ev)
                 );
             }
         });
