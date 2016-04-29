@@ -19,7 +19,7 @@ storeLocator.run(['$rootScope', '$location', 'storageManager', 'sessionManager',
         }
     });
 
-    $rootScope.$on('$routeChangeSuccess', function() {
+    $rootScope.$on('$routeChangeSuccess', function(event, current) {
         history.push($location.$$path);
     });
 

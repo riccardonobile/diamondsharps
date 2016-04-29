@@ -17,11 +17,15 @@ section.map-container {
 }
 #map {
     position: absolute;
-    top: 64px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
 }
+md-content.map-header > md-toolbar:not(.md-menu-toolbar) {
+    background-color: rgba(255,193,7, 0.8);
+}
+/*
 @media only screen and (min-width: 0) and (max-width: 959px) and (orientation: portrait) {
     #map {
         top: 56px;
@@ -31,7 +35,7 @@ section.map-container {
     #map {
         top: 45px;
     }
-}
+}*/
 .md-subhead {
     color: rgba(0,0,0,0.54);
 }
@@ -40,6 +44,9 @@ md-list-item.md-4-line > ._md-no-style {
     height: auto;
     min-height: 110px;
 }
-.md-toolbar-tools > .md-button.md-no-margin-left {
+.md-toolbar-tools > div {
+    height: 40px;
+}
+.md-toolbar-tools > div > .md-button.md-no-margin-left {
     margin-left: -8px;
 }
