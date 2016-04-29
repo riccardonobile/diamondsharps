@@ -38,7 +38,7 @@ storeLocator.factory('mapManager', ['appConfig', function(appConfig) {
                     var infowindow = new google.maps.InfoWindow({
                         content: '<span class="md-headline">' + el.name + '</span><br>' +
                         '<span class="md-subhead">' + el.address + '</span><br>' +
-                        '<span class="md-subhead">' + el.phone + '</span><br>' +
+                        '<span class="md-subhead"><a href="tel:' + el.phone + ' ">' + el.phone + '</a></span><br>' +
                         '<a href="#/details/' + el.guid + '">More details</a>'
                     });
 
