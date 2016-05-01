@@ -77,6 +77,11 @@ storeLocator.factory('mapManager', ['appConfig', function(appConfig) {
         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         return R * c;
     };
+    
+    map_manager.getDriveTo = function (myPosition, position) {
+        var link = "https://www.google.it/maps/dir/";
+        return link + myPosition.lat + "," + myPosition.lng + "/" + position.lat + "," + position.lng;
+    };
 
     return map_manager;
 }]);
