@@ -1,5 +1,6 @@
-storeLocator.controller('storesMapController', ['$scope', 'storeManager', '$geolocation', 'mapManager', function($scope, storeManager, $geolocation, mapManager) {
+storeLocator.controller('storesMapController', ['$scope', 'storeManager', 'locationManager', 'mapManager', function($scope, storeManager, locationManager, mapManager) {
 
+    /*
     $geolocation.getCurrentPosition({
         timeout: 60000
     }).then(function(position) {
@@ -13,5 +14,6 @@ storeLocator.controller('storesMapController', ['$scope', 'storeManager', '$geol
             zoomControl: true
         }, storeManager.getAll);
     });
+    */
 
 }]);
