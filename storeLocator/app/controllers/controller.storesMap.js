@@ -16,4 +16,10 @@ storeLocator.controller('storesMapController', ['$scope', 'storeManager', 'locat
     });
     */
 
+    if (!locationManager.available) {
+        $rootScope.$on('positionAvailable', function() {
+            // TODO
+        });
+    }
+
 }]);
