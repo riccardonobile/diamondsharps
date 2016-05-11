@@ -2,7 +2,7 @@ storeLocator.controller('loginController', ['$scope', '$rootScope', '$location',
     if (storageManager.getSession() !== null) {
         $location.url('/');
     }
-    $scope.login = function() {
+    $scope.login = function(ev) {
         authManager.login($scope.user.email, $scope.user.password, function(err, resp) {
             if(!err) {
                 storageManager.setSession(resp);
